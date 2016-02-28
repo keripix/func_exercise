@@ -16,4 +16,6 @@
                         [0 1 2 3])
                 ))
          "abstracting the above steps to a function"
-         (is (= [1 2 3 4] (mapping_using_reduce #(inc %1) [0 1 2 3]))))
+         (is (= [1 2 3 4] (mapping_using_reduce #(inc %1) [0 1 2 3])))
+         "what if we use list?"
+         (is (= '(1 4 9 16) (mapping_using_reduce #(* %1 %1) '(1 2 3 4)))))
