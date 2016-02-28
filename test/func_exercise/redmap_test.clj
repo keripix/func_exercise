@@ -8,6 +8,6 @@
                 (reduce (fn [x y]
                             (if (vector? x)
                               (conj x (inc y))
-                              (conj [] (inc x) (inc y))))
+                              (vector (inc x) (inc y))))
                         [0 1 2 3])
                 )))
