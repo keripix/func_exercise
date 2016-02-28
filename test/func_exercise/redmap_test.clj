@@ -1,7 +1,13 @@
 (ns func-exercise.redmap_test
   (:require [clojure.test :refer :all]
-            [func-exercise.redmap :refer :all]))
-
+            [clojure.core :refer :all]))
 
 (deftest test-redmap
-  (is (= [1 2 3 4] (redmap #(inc %) [0 1 2 3]))))
+         "implementing map with reduce"
+         (is (= [1 2 3 4]
+                (reduce (fn [x y]
+                            (if (seq? x)
+                              ()
+                              ()))
+                        [0 1 2 3])
+                )))

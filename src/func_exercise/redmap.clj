@@ -1,6 +1,6 @@
 (ns func-exercise.redmap
-  (:gen-class))
+  (:require clojure.core))
 
-(defn redmap
-	[transform items]
-	)
+;(defn redmap
+;			[transform items]
+;      (reduce transform items))
