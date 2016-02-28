@@ -6,6 +6,11 @@
   [fn coll]
   (reduce #(conj (vec %1) (fn %2)) [] coll))
 
+(defn mappint_using_reduce_into
+  [fn coll]
+  (reduce #(into %1 (vector (fn %2))) [] coll)
+  )
+
 (deftest test-redmap
          "implementing map with reduce"
          (is (= [1 2 3 4]
@@ -18,4 +23,7 @@
          "abstracting the above steps to a function"
          (is (= [1 2 3 4] (mapping_using_reduce #(inc %1) [0 1 2 3])))
          "what if we use list?"
-         (is (= '(1 4 9 16) (mapping_using_reduce #(* %1 %1) '(1 2 3 4)))))
+         (is (= '(1 4 9 16) (mapping_using_reduce #(* %1 %1) '(1 2 3 4))))
+         "what if we use into instead of conj"
+         (is (= [1 2 3 4] (mappint_using_reduce_into #(inc %1) [0 1 2 3])))
+         )
