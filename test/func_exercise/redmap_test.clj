@@ -1,7 +1,7 @@
-(ns func-exercise.core-test
+(ns func-exercise.redmap_test
   (:require [clojure.test :refer :all]
             [func-exercise.redmap :refer :all]))
 
 
-(deftest test-name
-  )
+(deftest test-redmap
+  (is (= [1 2 3 4] (redmap #(inc %) [0 1 2 3]))))

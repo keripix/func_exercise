@@ -1,6 +1,6 @@
-(ns func-exercise.core
+(ns func-exercise.redmap
   (:gen-class))
 
 (defn redmap
-	[items]
+	[transform items]
 	)
