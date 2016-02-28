@@ -6,8 +6,8 @@
          "implementing map with reduce"
          (is (= [1 2 3 4]
                 (reduce (fn [x y]
-                            (if (vector? x)
-                              (conj x (inc y))
+                            (if (coll? x)
+                              (conj (vec x) (inc y))
                               (vector (inc x) (inc y))))
                         [0 1 2 3])
                 )))
